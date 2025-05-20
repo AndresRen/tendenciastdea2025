@@ -8,6 +8,11 @@ from reportlab.pdfgen import canvas
 from datetime import date
 from .models import Proyecto, Tarea
 from .serializers import ProyectoSerializer, TareaSerializer
+from django.shortcuts import render
+
+# Create your views here.
+def index(request):
+    return render(request, 'index.html')
 
 class ProyectoViewSet(viewsets.ModelViewSet):
     queryset = Proyecto.objects.all()
