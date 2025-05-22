@@ -29,6 +29,7 @@ router.register(r'proyectos', views.ProyectoViewSet, basename='proyecto')
 router.register(r'tareas', views.TareaViewSet)
 
 urlpatterns = [
+    path('', views.index, name='index'),
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
