@@ -6,6 +6,7 @@ from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
 )
+import tasks
 from tasks.views import tareas_vencidas
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
@@ -30,6 +31,7 @@ router.register(r'tareas', views.TareaViewSet)
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('', include('tasks.urls')),
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),

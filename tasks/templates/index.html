@@ -13,12 +13,20 @@
         <p>Este es un template básico funcionando desde la nube.</p>
     </header>
 
+    <nav>
+        <ul>
+            <li><a href="{% url 'login' %}">Iniciar sesión</a></li>
+            <li><a href="{% url 'tarea_list' %}">Mis tareas</a></li>
+            <li><a href="{% url 'proyecto_list' %}">Mis proyectos</a></li>
+        </ul>
+    </nav>
+
     <main>
         <section>
             <h2>¿Qué incluye esta página?</h2>
             <ul>
                 <li>Renderizado desde Django</li>
-                <li>CSS básico enlazado desde <code>{% static 'static/style.css' %}</code></li>
+                <li>CSS básico enlazado desde <code>{% static 'css/style.css' %}</code></li>
                 <li>Despliegue exitoso en Vercel</li>
             </ul>
         </section>
