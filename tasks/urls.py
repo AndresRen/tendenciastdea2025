@@ -20,5 +20,8 @@ urlpatterns = [
     path('proyectos/crear/', web_views.proyecto_create, name='proyecto_create'),
     path('proyectos/<int:pk>/', web_views.proyecto_detail, name='proyecto_detail'),
     path('proyectos/<int:pk>/editar/', web_views.proyecto_update, name='proyecto_update'),
-    path('proyectos/<int:pk>/eliminar/', web_views.proyecto_delete, name='proyecto_delete'),
+    # path('proyectos/<int:pk>/eliminar/', web_views.proyecto_delete, name='proyecto_delete'),
+    path('proyectos/<int:pk>/eliminar/', views.ProyectoDeleteView.as_view(), name='proyecto_delete'),
+
+    path('proyectos/<int:pk>/reportes/', views.proyecto_reportes, name='proyecto_reportes'),
 ]
